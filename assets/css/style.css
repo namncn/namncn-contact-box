@@ -1,0 +1,188 @@
+#contact-box-overlay {
+    position: fixed;
+    background-color: black;
+    opacity: 0.5;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 999;
+    display: none;
+}
+
+#contact-box {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    background: conic-gradient(from 180deg at 50% 70%,hsla(0,0%,98%,1) 0deg,#eec32d 72.0000010728836deg,#ec4b4b 144.0000021457672deg,#709ab9 216.00000858306885deg,#4dffbf 288.0000042915344deg,hsla(0,0%,98%,1) 1turn);
+    padding: 0.125rem;
+    display: flex;
+    z-index: 1000;
+    border-radius: 9999999px;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    cursor: pointer;
+    user-select: none;
+}
+
+#contact-box .popup {
+    position: absolute;
+    min-width: 20rem;
+    background-color: #fff;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    bottom: 4rem;
+    right: 0px;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: none;
+    animation: contact-popup 0.5s ease;
+}
+
+#contact-box .popup .item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+#contact-box .popup .item:hover {
+    background-color: #f4f4f5;
+    cursor: pointer;
+}
+
+#contact-box .popup .item .meta {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-box .popup .item .icon {
+    border-radius: 999999px;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    height: auto;
+}
+
+#contact-box .popup .item .logo {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-box .popup .item .logo img {
+    width: 100%;
+}
+
+#contact-box .popup .divide {
+    height: 1px;
+    background-color: #f4f4f5;
+    margin: 0.25rem 0;
+}
+
+#contact-box .popup .item .meta .title {
+    margin-bottom: 0px;
+    color: #18181b;
+    font-size: 0.875rem;
+    margin-top: 0;
+}
+
+#contact-box .popup .item .meta .description {
+    color: #71717a;
+    font-weight: 200;
+    font-size: 0.75rem;
+}
+
+#contact-box .popup:before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 28px;
+    border-top: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+#contact-box .container {
+    width: 100%;
+    heigth: 100%;
+    padding: 0.375rem 0.75rem;
+    background-color: #fff;
+    backdrop-filter: blur(8px);
+    opacity: 0.9;
+    border-radius: 9999999px;
+    position: relative;
+    color: #27272a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#contact-box .ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    width: 14px;
+    height: 14px;
+    border-radius: 9999999px;
+    background-color: red;
+    position: absolute;
+    opacity: .9;
+}
+
+#contact-box .dot-ping {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999999px;
+    position: absolute;
+    top: 0px;
+    right: -4px;
+}
+
+#contact-box .dot {
+    background-color: red;
+    width: 14px;
+    height: 14px;
+    border-radius: 9999999px;
+}
+
+#contact-box .contact-icon {
+    width: 2.25rem;
+    aspect-ratio: 1;
+    background-color: #27272a;
+    color: #fff;
+    border-radius: 999999px;
+    margin-left: -7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes contact-popup {
+  0% {
+    transform: translateY(1.25rem);
+  }
+  50% {
+    transform: translateY(-1.25rem);
+
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.go-to {
+    bottom: 4rem !important;
+    z-index: 998 !important;
+}
